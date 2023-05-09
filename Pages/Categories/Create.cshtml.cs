@@ -32,7 +32,7 @@ namespace SupermarketWEB.Pages.Categories
             _context.Categories.Add(Category);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Intex");
+            return RedirectToPage("./Index");
         }
     }
 }
