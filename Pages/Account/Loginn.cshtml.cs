@@ -31,6 +31,19 @@ namespace SupermarketWEB.Pages.Account
                 await HttpContext.SignInAsync("MyCookieAuth", clasimsPrincipal);
                 return RedirectToPage("/index");
             }
+            else
+            {
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, "User"),
+                    new Claim(ClaimTypes.Email, User.Email),
+                };
+                var identity = new ClaimsIdentity(claims, "MyCookieAuth");
+                ClaimsPrincipal clasimsPrincipal = new ClaimsPrincipal(identity);
+                await HttpContext.SignInAsync("MyCookieAuth", clasimsPrincipal);
+                return RedirectToPage("/index");
+
+            }
             return Page();
         }
         /*public void OnPost()
