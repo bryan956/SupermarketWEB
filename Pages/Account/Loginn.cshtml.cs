@@ -23,7 +23,7 @@ namespace SupermarketWEB.Pages.Account
             {
                 var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name, "Admin "),
+                    new Claim(ClaimTypes.Name, " Admin "),
                     new Claim(ClaimTypes.Email, User.Email),
                 };
                 var identity = new ClaimsIdentity(claims, "MyCookieAuth");
@@ -35,7 +35,7 @@ namespace SupermarketWEB.Pages.Account
             {
                 var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name, "User "),
+                    new Claim(ClaimTypes.Name, " User "),
                     new Claim(ClaimTypes.Email, User.Email),
                 };
                 var identity = new ClaimsIdentity(claims, "MyCookieAuth");

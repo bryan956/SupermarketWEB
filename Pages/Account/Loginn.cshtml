@@ -2,14 +2,65 @@
 @model SupermarketWEB.Pages.Account.LoginnModel
 @{
 }
-<form method="post">
+<style>
+    body {
+        background-image: url('https://img.freepik.com/vector-gratis/fondo-geometrico-abstracto-diseno-poli_1048-8354.jpg?w=740&t=st=1700592028~exp=1700592628~hmac=203b7a29b0ddd2e8091577648c4e0cb4133e021f266a13158dcdd4abb110d14f');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif; /* Establece la fuente según tus preferencias */
+    }
+
+    .formulario {
+        max-width: 300px;
+        margin: auto;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente para mejorar la legibilidad */
+    }
+
+    .form-label {
+        font-weight: bold;
+    }
+
+    .btn-container{
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+     .logo-container {
+        text-align: center;
+       
+
+     }
+
+     .logo {
+        max-width: 50%;
+        width: 100%; /* Hace que la imagen ocupe todo el ancho del contenedor */
+        margin: 0 auto; /* Centra la imagen horizontalmente */
+     }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: #fff;
+    }
+</style>
+<form method="post" class="formulario">
+    <div class="logo-container">
+        <img src="https://purepng.com/public/uploads/large/google-stadia-logo-3cx.png" alt="Logo de tu aplicación" class="logo" width="65px"/>
+    </div>
     <div class="text-danger" asp-validation-summary="ModelOnly"></div>
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email address</label>
         <input type="email" class="form-control"
         asp-for="User.Email"
                id="exampleInputEmail1" aria-describedby="emailHelp" />
-        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        <div id="emailHelp" class="form-text"> </div>
         <div>
             <span class="text-danger" asp-validation-for="User.Email"></span>
         </div>
@@ -27,5 +78,11 @@
         <input type="checkbox" class="form-check-input" id="exampleCheck1" />
         <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+     <div class="btn-container">
+        <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+    </div>
+    <div class="btn-container">
+    <p>No tienes una cuenta? <a asp-page="/Account/Register">Regístrate</a></p>
+    <p><a asp-page="/Account/ForgotPassword">¿Se te olvidó la contraseña?</a></p>
+</div>
 </form>
